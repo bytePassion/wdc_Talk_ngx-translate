@@ -8,7 +8,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 @NgModule({
   imports: [
     CommonModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot()    
   ],
   declarations: [FrameComponent, ContentComponent, HomeComponent],
   exports: [HomeComponent]
