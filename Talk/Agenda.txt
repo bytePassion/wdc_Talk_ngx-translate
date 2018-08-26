@@ -1,0 +1,18 @@
+Lokalisierung in Angular (mit ngx-translate)
+
+1. What is ngx-translate?
+2. Vorstellen der Beispielanwendung
+3. Struktur des Sprachtabellen
+
+mulit-language im frontend
+einbindung des ngx-translate-pakets
+sprachumschaltung (-> aktuelle sprache auslesen, etc)
+übersetzung mit pipe
+übersetzung mit direktive
+übersetzung mit parameter
+übersetzung mit service
+eigene pipes die auf sprachumstellung reagieren
+labelsprache
+unit-testing einer komponente mit übersetzungen
+
+sprach-tabellen aus dem backend
