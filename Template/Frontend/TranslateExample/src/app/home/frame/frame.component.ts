@@ -27,6 +27,10 @@ export class FrameComponent implements OnInit {
     this.selectedLanguage = this.availableLanguages[0];
   }
 
+  onItemClick(item: LanguageDisplayObject): void {
+    this.selectedLanguage = item;
+  }
+
 }
 
 

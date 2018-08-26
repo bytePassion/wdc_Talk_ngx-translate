@@ -1,11 +1,8 @@
-<!-- <header>
+<header>
    
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Fixed navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+    <nav class="navbar navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Fixed navbar</a>          
+     
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -18,29 +15,23 @@
           </li>
         </ul>
 
-         <div ngbDropdown class="d-inline-block">
-          <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{ selectedLanguage.displayName }}</button>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <button *ngFor="let language of availableLanguages" class="dropdown-item">{{ language.displayName }}</button>            
-          </div>
-        </div> 
-        
-        
-      </div>
-    </nav>
+        <div class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            {{ selectedLanguage.displayName }} 
+            <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li *ngFor="let language of availableLanguages" role="menuitem" (click)="onItemClick(language)">{{language.displayName}}</li>                       
+          </ul>
+         </div>
+                       
+    </nav> 
   </header>
 
   <footer class="footer">
     <div class="container">
       <span style="color: white;">Place sticky footer content here.</span>
     </div>
-  </footer> -->
+  </footer>
 
-  <div ngbDropdown class="d-inline-block">
-    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-      <button class="dropdown-item">Action - 1</button>
-      <button class="dropdown-item">Another Action</button>
-      <button class="dropdown-item">Something else is here</button>
-    </div>
-  </div>
+  
