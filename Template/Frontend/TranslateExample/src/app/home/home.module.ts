@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FrameComponent } from './frame/frame.component';
 import { ContentComponent } from './content/content.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [FrameComponent, ContentComponent],
-  exports: [FrameComponent]
+  declarations: [FrameComponent, ContentComponent, HomeComponent],
+  exports: [HomeComponent]
 })
 export class HomeModule { }
