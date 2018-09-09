@@ -10,8 +10,8 @@ export class MockBackend implements HttpInterceptor {
         if (request.url.endsWith('/api/numbers/fancy') && request.method === 'GET') {
 
             const fancyNumbers = {
-                first: 5,
-                second: 10
+                first: Math.floor(Math.random() * 100) + 1,
+                second: Math.floor(Math.random() * 100) + 1
             };
 
             return of(new HttpResponse({ status: 200, body: fancyNumbers }));
