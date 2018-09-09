@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PageOneComponent } from './page-one/page-one.component';
 import { PageTwoComponent } from './page-two/page-two.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { RoundingPipePipe } from './pipes/rounding-pipe.pipe';
+import { RoundingPipe } from './pipes/rounding.pipe';
 
 @NgModule({
   imports: [
@@ -14,7 +14,7 @@ import { RoundingPipePipe } from './pipes/rounding-pipe.pipe';
     PageOneComponent,
     PageTwoComponent,
     WelcomeComponent,
-    RoundingPipePipe
+    RoundingPipe
   ],
   exports:
   [

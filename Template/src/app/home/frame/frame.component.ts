@@ -16,12 +16,12 @@ export class FrameComponent implements OnInit {
   ngOnInit() {
     this.availableLanguages = [
       {
-        displayName: "Deutsch",
-        languageCode: "DE",        
+        displayName: 'Deutsch',
+        languageCode: 'DE',
       },
       {
-        displayName: "Englisch",
-        languageCode: "EN",        
+        displayName: 'Englisch',
+        languageCode: 'EN',
       }
     ];
     this.selectedLanguage = this.availableLanguages[0];

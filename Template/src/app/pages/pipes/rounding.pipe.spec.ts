@@ -1,8 +1,8 @@
-import { RoundingPipePipe } from './rounding-pipe.pipe';
+import { RoundingPipe } from './rounding.pipe';
 
 describe('RoundingPipePipe', () => {
   it('create an instance', () => {
-    const pipe = new RoundingPipePipe();
+    const pipe = new RoundingPipe();
     expect(pipe).toBeTruthy();
   });
 });

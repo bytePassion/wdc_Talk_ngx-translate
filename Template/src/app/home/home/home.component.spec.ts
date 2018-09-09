@@ -13,6 +13,7 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ HomeComponent ]
     })
+    .overrideTemplate(HomeComponent, '<div>Test</div>')
     .compileComponents();
   }));
 

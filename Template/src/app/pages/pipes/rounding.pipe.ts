@@ -3,12 +3,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'roundingPipe'
 })
-export class RoundingPipePipe implements PipeTransform {
+export class RoundingPipe implements PipeTransform {
 
   transform(value: number): string {
 
-    var rounded = value.toFixed(2);
-    return rounded.toString() + "€";
+    const rounded = value.toFixed(2);
+    return rounded.toString() + '€';
   }
 
 }
