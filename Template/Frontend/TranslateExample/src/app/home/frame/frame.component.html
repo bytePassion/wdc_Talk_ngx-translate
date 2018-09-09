@@ -1,31 +1,38 @@
 <header>
-   
+
     <nav class="navbar navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Fixed navbar</a>          
-     
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <span class="navbar-brand not-selectable">Multi-Lingual Demo</span>
+
+        <ul class="navbar-nav mr-auto d-flex flex-row">
+          <li class="nav-item active mx-3">
+            <a class="nav-link" routerLink="welcome">
+              Home
+            </a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link" routerLink="page1">Page 1</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+              <a class="nav-link" routerLink="page2">Page 2</a>
           </li>
         </ul>
 
         <div class="btn-group" dropdown>
           <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-            {{ selectedLanguage.displayName }} 
+            {{ selectedLanguage.displayName }}
             <span class="caret"></span>
           </button>
-          <ul *dropdownMenu class="dropdown-menu" role="menu">
-            <li *ngFor="let language of availableLanguages" role="menuitem" (click)="onItemClick(language)">{{language.displayName}}</li>                       
+          <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+            <li *ngFor="let language of availableLanguages"
+                class="listItem"
+                role="menuitem"
+                (click)="onItemClick(language)">
+                {{language.displayName}}
+              </li>
           </ul>
          </div>
-                       
-    </nav> 
+
+    </nav>
   </header>
 
   <footer class="footer">
@@ -34,4 +41,3 @@
     </div>
   </footer>
 
-  

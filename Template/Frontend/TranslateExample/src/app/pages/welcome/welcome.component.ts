@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.scss']
+  selector: 'app-welcome',
+  templateUrl: './welcome.component.html',
+  styleUrls: ['./welcome.component.scss']
 })
-export class ContentComponent implements OnInit {
+export class WelcomeComponent implements OnInit {
 
   firstNumber: number = 0;
   secondNumber: number = 0;
