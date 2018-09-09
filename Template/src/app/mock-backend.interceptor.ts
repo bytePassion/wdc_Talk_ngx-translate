@@ -1,6 +1,6 @@
-import { Injectable } from "@angular/core";
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpResponse } from "@angular/common/http";
-import { Observable, of } from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpResponse } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class MockBackend implements HttpInterceptor {
@@ -11,7 +11,7 @@ export class MockBackend implements HttpInterceptor {
 
             const fancyNumbers = {
                 first: this.getRandomFloat(0, 100),
-                second: this.getRandomFloat(100, 2000)
+                second: this.getRandomFloat(1100, 2000)
             };
 
             return of(new HttpResponse({ status: 200, body: fancyNumbers }));
