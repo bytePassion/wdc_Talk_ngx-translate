@@ -10,14 +10,18 @@ export class MockBackend implements HttpInterceptor {
         if (request.url.endsWith('/api/numbers/fancy') && request.method === 'GET') {
 
             const fancyNumbers = {
-                first: Math.floor(Math.random() * 100) + 1,
-                second: Math.floor(Math.random() * 100) + 1
+                first: this.getRandomFloat(0, 100),
+                second: this.getRandomFloat(100, 2000)
             };
 
             return of(new HttpResponse({ status: 200, body: fancyNumbers }));
         }
 
         return next.handle(request);
+    }
+
+    private getRandomFloat(min, max) {
+      return Math.random() * (max - min) + min;
     }
 
 }
