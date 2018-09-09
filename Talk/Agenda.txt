@@ -14,5 +14,6 @@ sprachumschaltung (-> aktuelle sprache auslesen, etc)
 eigene pipes die auf sprachumstellung reagieren
 labelsprache
 unit-testing einer komponente mit übersetzungen
+(beim start der applikation default sprache des browsers einstellen)
 
 sprach-tabellen aus dem backend
