@@ -2,6 +2,24 @@
 
   <button (click)="onClick()">Load random numbers from backend</button>
 
-  <div> First Number: {{firstNumber}} </div>
-  <div> Second Number: {{secondNumber}} </div>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          First Number:
+        </td>
+        <td class="money-column text-right">
+          {{firstNumber | roundingPipe}}
+        </td>
+      </tr>
+      <tr>
+          <td>
+            Second Number:
+          </td>
+          <td class="money-column text-right">
+            {{secondNumber | roundingPipe}}
+          </td>
+        </tr>
+    </tbody>
+  </table>
 </div>
