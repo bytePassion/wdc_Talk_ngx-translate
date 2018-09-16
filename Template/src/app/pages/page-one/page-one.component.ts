@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PageOneService} from './page-one.service';
+import {take} from 'rxjs/operators';
 
 @Component({
   selector: 'app-page-one',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageOneComponent implements OnInit {
 
-  constructor() { }
+  mydata: string;
+
+  constructor(private pageOneService: PageOneService) { }
 
   ngOnInit() {
+    this.pageOneService.getMyData()
+      .pipe(
+        take(1)
+      ).subscribe((result) => this.mydata = result);
   }
 
 }

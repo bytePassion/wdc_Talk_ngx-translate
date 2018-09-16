@@ -17,6 +17,11 @@ export class MockBackend implements HttpInterceptor {
             return of(new HttpResponse({ status: 200, body: fancyNumbers }));
         }
 
+      if (request.url.endsWith('/api/mydata') && request.method === 'GET') {
+
+        return of(new HttpResponse({ status: 200, body: 'string data from the Backend!' }));
+      }
+
         return next.handle(request);
     }
 
