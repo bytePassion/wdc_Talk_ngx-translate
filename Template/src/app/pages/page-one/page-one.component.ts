@@ -9,15 +9,18 @@ import {take} from 'rxjs/operators';
 })
 export class PageOneComponent implements OnInit {
 
-  mydata: string;
 
   constructor(private pageOneService: PageOneService) { }
 
   ngOnInit() {
+
+  }
+
+  onClick() {
     this.pageOneService.getMyData()
       .pipe(
         take(1)
-      ).subscribe((result) => this.mydata = result);
+      ).subscribe((result) => alert(result));
   }
 
 }
