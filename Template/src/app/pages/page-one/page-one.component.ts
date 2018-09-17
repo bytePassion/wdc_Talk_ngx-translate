@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import {PageOneService} from './page-one.service';
 import {take} from 'rxjs/operators';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-page-one',
@@ -9,18 +10,24 @@ import {take} from 'rxjs/operators';
 })
 export class PageOneComponent implements OnInit {
 
+  mydata = '';
+  modalRef: BsModalRef;
 
-  constructor(private pageOneService: PageOneService) { }
+  constructor(private pageOneService: PageOneService, private modalService: BsModalService) { }
 
   ngOnInit() {
 
   }
 
-  onClick() {
+  openModal(template: TemplateRef<any>) {
     this.pageOneService.getMyData()
       .pipe(
         take(1)
-      ).subscribe((result) => alert(result));
+      ).subscribe((result) => {
+        this.mydata = result;
+        this.modalRef = this.modalService.show(template);
+      });
+
   }
 
 }
