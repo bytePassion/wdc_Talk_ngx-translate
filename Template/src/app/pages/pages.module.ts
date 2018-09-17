@@ -5,12 +5,10 @@ import { PageTwoComponent } from './page-two/page-two.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { RoundingPipe } from './pipes/rounding.pipe';
 import {PageOneService} from './page-one/page-one.service';
-import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   imports: [
-    CommonModule,
-    ModalModule.forRoot()
+    CommonModule
   ],
   providers: [
     PageOneService
