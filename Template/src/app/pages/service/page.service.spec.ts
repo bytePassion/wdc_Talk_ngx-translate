@@ -1,7 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { PageOneService } from './page-one.service';
 import {of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import { PageService } from './page.service';
 
 
 const httpClientMock: jasmine.SpyObj<HttpClient> = jasmine.createSpyObj('HttpClient', ['get']);
@@ -13,13 +13,13 @@ describe('PageOneService', () => {
 
 
     TestBed.configureTestingModule({
-      providers: [PageOneService,
+      providers: [PageService,
         { provide: HttpClient, useValue: httpClientMock }]
     });
   });
 
-  it('getMyData should fetch data from backend', inject([PageOneService], (service: PageOneService) => {
-    service.getMyData();
+  it('getMyData should fetch data from backend', inject([PageService], (service: PageService) => {
+    service.getPageOneData();
     expect(httpClientMock.get).toHaveBeenCalledTimes(1);
   }));
 });

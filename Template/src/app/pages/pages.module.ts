@@ -4,14 +4,15 @@ import { PageOneComponent } from './page-one/page-one.component';
 import { PageTwoComponent } from './page-two/page-two.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { RoundingPipe } from './pipes/rounding.pipe';
-import {PageOneService} from './page-one/page-one.service';
+import { PageService } from './service/page.service';
+
 
 @NgModule({
   imports: [
     CommonModule
   ],
   providers: [
-    PageOneService
+    PageService
   ],
   declarations:
   [

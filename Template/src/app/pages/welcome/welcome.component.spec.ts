@@ -4,6 +4,7 @@ import { pipe, of } from 'rxjs';
 import { RoundingPipe} from '../pipes/rounding.pipe';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { PageService } from '../service/page.service';
 
 
 
@@ -11,11 +12,11 @@ describe('WelcomeComponent', () => {
   let component: WelcomeComponent;
   let fixture: ComponentFixture<WelcomeComponent>;
 
-  const httpClientMock: jasmine.SpyObj<HttpClient> = jasmine.createSpyObj('HttpClient', ['get']);
+  const pageServiceMock: jasmine.SpyObj<PageService> = jasmine.createSpyObj('PageService', ['getWelcomePageData']);
 
   beforeEach(async(() => {
 
-    httpClientMock.get.and.returnValue(of({first: 1, second: 2}));
+    pageServiceMock.getWelcomePageData.and.returnValue(of({first: 1, second: 2}));
 
     TestBed.configureTestingModule({
       declarations: [
@@ -23,7 +24,7 @@ describe('WelcomeComponent', () => {
         RoundingPipe
       ],
       providers: [
-        { provide: HttpClient, useValue: httpClientMock }
+        { provide: PageService, useValue: pageServiceMock }
       ],
       schemas: [ NO_ERRORS_SCHEMA ]
     })
@@ -46,7 +47,7 @@ describe('WelcomeComponent', () => {
     component.onClick();
 
     // Assert
-    expect(httpClientMock.get).toHaveBeenCalledTimes(1);
+    expect(pageServiceMock.getWelcomePageData).toHaveBeenCalledTimes(1);
     expect(component.firstNumber).toBe(1);
     expect(component.secondNumber).toBe(2);
   });
