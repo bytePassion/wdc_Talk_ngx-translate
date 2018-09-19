@@ -7,12 +7,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { PagesModule } from '../pages/pages.module';
 import { PageOneComponent } from '../pages/page-one/page-one.component';
 import { PageTwoComponent } from '../pages/page-two/page-two.component';
-import { WelcomeComponent } from '../pages/welcome/welcome.component';
+import { PageThreeComponent } from '../pages/page-three/page-three.component';
+
 
 const routes = [
   {
     path: '',
-    redirectTo: 'welcome',
+    redirectTo: 'page1',
     pathMatch: 'full',
   },
   {
@@ -24,8 +25,8 @@ const routes = [
     component: PageTwoComponent
   },
   {
-    path: 'welcome',
-    component: WelcomeComponent
+    path: 'page3',
+    component: PageThreeComponent
   }
 ];
 

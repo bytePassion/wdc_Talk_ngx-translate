@@ -7,7 +7,7 @@ import { PageService } from './page.service';
 const httpClientMock: jasmine.SpyObj<HttpClient> = jasmine.createSpyObj('HttpClient', ['get']);
 const testData = 'test';
 
-describe('PageOneService', () => {
+describe('PageService', () => {
   beforeEach(() => {
     httpClientMock.get.and.returnValue(of(testData));
 

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageOneComponent } from './page-one/page-one.component';
 import { PageTwoComponent } from './page-two/page-two.component';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { PageThreeComponent } from './page-three/page-three.component';
 import { RoundingPipe } from './pipes/rounding.pipe';
 import { PageService } from './service/page.service';
 
@@ -18,14 +18,14 @@ import { PageService } from './service/page.service';
   [
     PageOneComponent,
     PageTwoComponent,
-    WelcomeComponent,
+    PageThreeComponent,
     RoundingPipe
   ],
   exports:
   [
     PageOneComponent,
     PageTwoComponent,
-    WelcomeComponent
+    PageThreeComponent
   ]
 })
 export class PagesModule { }

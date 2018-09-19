@@ -1,26 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { WelcomeComponent } from './welcome.component';
-import { pipe, of } from 'rxjs';
+import { of } from 'rxjs';
 import { RoundingPipe} from '../pipes/rounding.pipe';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { PageService } from '../service/page.service';
+import { PageThreeComponent } from './page-three.component';
 
 
 
-describe('WelcomeComponent', () => {
-  let component: WelcomeComponent;
-  let fixture: ComponentFixture<WelcomeComponent>;
+describe('PageThreeComponent', () => {
+  let component: PageThreeComponent;
+  let fixture: ComponentFixture<PageThreeComponent>;
 
-  const pageServiceMock: jasmine.SpyObj<PageService> = jasmine.createSpyObj('PageService', ['getWelcomePageData']);
+  const pageServiceMock: jasmine.SpyObj<PageService> = jasmine.createSpyObj('PageService', ['getPageThreeData']);
 
   beforeEach(async(() => {
 
-    pageServiceMock.getWelcomePageData.and.returnValue(of({first: 1, second: 2}));
+    pageServiceMock.getPageThreeData.and.returnValue(of({first: 1, second: 2}));
 
     TestBed.configureTestingModule({
       declarations: [
-        WelcomeComponent,
+        PageThreeComponent,
         RoundingPipe
       ],
       providers: [
@@ -32,7 +31,7 @@ describe('WelcomeComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WelcomeComponent);
+    fixture = TestBed.createComponent(PageThreeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -47,7 +46,7 @@ describe('WelcomeComponent', () => {
     component.onClick();
 
     // Assert
-    expect(pageServiceMock.getWelcomePageData).toHaveBeenCalledTimes(1);
+    expect(pageServiceMock.getPageThreeData).toHaveBeenCalledTimes(1);
     expect(component.firstNumber).toBe(1);
     expect(component.secondNumber).toBe(2);
   });

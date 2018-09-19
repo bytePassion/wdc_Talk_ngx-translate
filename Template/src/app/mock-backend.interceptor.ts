@@ -8,16 +8,6 @@ export class MockBackend implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    if (request.url.endsWith('/api/numbers/fancy') && request.method === 'GET') {
-
-      const fancyNumbers: Numbers = {
-        first: this.getRandomFloat(0, 100),
-        second: this.getRandomFloat(1100, 2000)
-      };
-
-      return of(new HttpResponse({ status: 200, body: fancyNumbers }));
-    }
-
     if (request.url.endsWith('/api/pageOne') && request.method === 'GET') {
       return of(new HttpResponse({ status: 200, body: 'string data from the Backend!' }));
     }
@@ -30,6 +20,16 @@ export class MockBackend implements HttpInterceptor {
       };
 
       return of(new HttpResponse({ status: 200, body: fancyInts }));
+    }
+
+    if (request.url.endsWith('/api/pageThree') && request.method === 'GET') {
+
+      const fancyNumbers: Numbers = {
+        first: this.getRandomFloat(0, 100),
+        second: this.getRandomFloat(1100, 2000)
+      };
+
+      return of(new HttpResponse({ status: 200, body: fancyNumbers }));
     }
 
     return next.handle(request);
