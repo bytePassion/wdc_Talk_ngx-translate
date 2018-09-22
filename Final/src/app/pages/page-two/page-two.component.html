@@ -1,4 +1,4 @@
 <div class="main-page-content">
-    <button (click)="onClick()">Load values</button>
-  <div>Let me get {{value1}} examples and {{value2}} examples, to show you parametrization</div>
+    <button (click)="onClick()">{{ 'demo.page2.loadButton' | translate }}</button>
+  <div>{{ 'demo.page2.display' | translate:{'v1': value1, 'v2': value2} }}</div>
 </div>

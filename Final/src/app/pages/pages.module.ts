@@ -5,11 +5,13 @@ import { PageTwoComponent } from './page-two/page-two.component';
 import { PageThreeComponent } from './page-three/page-three.component';
 import { RoundingToCurrencyPipe } from './pipes/rounding-to-currency.pipe';
 import { PageService } from './service/page.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    TranslateModule.forChild()
   ],
   declarations:
   [

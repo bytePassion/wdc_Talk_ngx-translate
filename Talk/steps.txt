@@ -94,9 +94,23 @@ const content = (this.page1Counter++ % 2 === 0) ? this.page1Alert1LabelKey : thi
 --------> demo labelKey in alert
 
 12.
+TranslateModule.forChild()
+
+13.
+<button (click)="onClick()">{{ 'demo.page1.alertButton' | translate }}</button>
+
+14.
 .subscribe((result) => alert(this.translateService.instant(result)));
 
---------> demo still working
+--------> demo working again
 
+15.
+<button (click)="onClick()">{{ 'demo.page2.loadButton' | translate }}</button>
+<div>{{ 'demo.page2.display' | translate }}</div>
 
+--------> demo not working interpolation
 
+16.
+<div>{{ 'demo.page2.display' | translate:{'v1': value1, 'v2': value2} }}</div>
+
+--------> demo working again
