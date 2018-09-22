@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LanguageDisplayModel } from '../../models/languaged-display-model';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-frame',
@@ -14,7 +15,9 @@ export class FrameComponent implements OnInit {
 
   selectedPage: string;
 
-  constructor(private readonly router: Router) { }
+  constructor(private readonly router: Router,
+              private readonly translateService: TranslateService) {
+  }
 
   ngOnInit() {
 
@@ -25,19 +28,20 @@ export class FrameComponent implements OnInit {
 
     this.availableLanguages = [
       {
-        displayName: 'Deutsch',
-        languageCode: 'DE',
+        displayName: 'demo.frame.languageSelector.german',
+        languageCode: 'de',
       },
       {
-        displayName: 'Englisch',
-        languageCode: 'EN',
+        displayName: 'demo.frame.languageSelector.english',
+        languageCode: 'en',
       }
     ];
-    this.selectedLanguage = this.availableLanguages[0];
+    this.selectedLanguage = this.availableLanguages.find(lang => this.translateService.currentLang === lang.languageCode);
   }
 
   onItemClick(item: LanguageDisplayModel): void {
     this.selectedLanguage = item;
+    this.translateService.use(item.languageCode);
   }
 
 }

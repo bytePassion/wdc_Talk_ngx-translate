@@ -8,6 +8,7 @@ import { PagesModule } from '../pages/pages.module';
 import { PageOneComponent } from '../pages/page-one/page-one.component';
 import { PageTwoComponent } from '../pages/page-two/page-two.component';
 import { PageThreeComponent } from '../pages/page-three/page-three.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 const routes = [
@@ -33,6 +34,7 @@ const routes = [
 @NgModule({
   imports: [
     CommonModule,
+    TranslateModule.forChild(),
     BsDropdownModule.forRoot(),
     PagesModule,
     RouterModule.forRoot(routes)
