@@ -1,29 +1,29 @@
 {
-    "demo": {
-        "frame": {
-            "title": "Multi-Lingual-Demo",
-            "page1": "Page 1",
-            "page2": "Page 2",
-            "page3": "Page 3",
-            "languageSelector": {
-                "german": "German",
-                "english": "English"
-            },
-            "footer": "some crazy footer info © bytePassion 2018"
-        },
-        "page1": {
-            "alertButton": "Get text from backend and show alert",
-            "alertContent1": "One example to show in an alert",
-            "alertContent2": "Another example to show in an alert"
-        },
-        "page2": {
-            "loadButton": "Load values",
-            "display": "Let me get {{v1}} examples and {{v2}} examples, to show you parametrization"
-        },
-        "page3": {
-            "loadButton": "Load random numbers from backend",
-            "firstNumberCaption": "First number:",
-            "secondNumberCaption": "Second number:"
-        }
+  "demo": {
+    "frame": {
+      "title": "Multi-Lingual-Demo",
+      "page1": "Page 1",
+      "page2": "Page 2",
+      "page3": "Page 3",
+      "languageSelector": {
+        "german": "German",
+        "english": "English"
+      },
+      "footer": "some crazy footer info © bytePassion 2018"
+    },
+    "page1": {
+      "alertButton": "Get text from backend and show alert",
+      "alertContent1": "One example to show in an alert",
+      "alertContent2": "Another example to show in an alert"
+    },
+    "page2": {
+      "loadButton": "Load values",
+      "display": "Let me get {{v1}} examples and {{v2}} examples, to show you parametrization"
+    },
+    "page3": {
+      "loadButton": "Load random numbers from backend",
+      "firstNumberCaption": "First number:",
+      "secondNumberCaption": "Second number:"
     }
+  }
 }
