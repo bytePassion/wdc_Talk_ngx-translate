@@ -26,11 +26,11 @@ export class FrameComponent implements OnInit {
     this.availableLanguages = [
       {
         displayName: 'Deutsch',
-        languageCode: 'DE',
+        languageCode: 'de',
       },
       {
         displayName: 'Englisch',
-        languageCode: 'EN',
+        languageCode: 'en',
       }
     ];
     this.selectedLanguage = this.availableLanguages[0];
