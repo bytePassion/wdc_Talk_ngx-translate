@@ -7,8 +7,8 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class MockBackend implements HttpInterceptor {
 
-  private page1Alert1 = "One example to show in an alert";
-  private page1Alert2 = "Another example to show in an alert";
+  private page1Alert1 = 'One example to show in an alert';
+  private page1Alert2 = 'Another example to show in an alert';
   private page1Counter = 0;
 
   constructor(private readonly httpClient: HttpClient) { }
@@ -41,19 +41,19 @@ export class MockBackend implements HttpInterceptor {
 
     if (request.url.endsWith('/api/translation/en') && request.method === 'GET') {
 
-      return this.httpClient.get("assets/translations/en.json")
-                 .pipe(map((res: any) => new HttpResponse({ status: 200, body: res })));      
+      return this.httpClient.get('assets/translations/en.json')
+                 .pipe(map((res: any) => new HttpResponse({ status: 200, body: res })));
     }
 
     if (request.url.endsWith('/api/translation/de') && request.method === 'GET') {
 
-      return this.httpClient.get("assets/translations/de.json")
-                 .pipe(map((res: any) => new HttpResponse({ status: 200, body: res })));      
+      return this.httpClient.get('assets/translations/de.json')
+                 .pipe(map((res: any) => new HttpResponse({ status: 200, body: res })));
     }
 
     if (request.url.endsWith('/api/translation/la') && request.method === 'GET') {
 
-      return of(new HttpResponse({ status: 200, body: JSON.parse("") }));
+      return of(new HttpResponse({ status: 200, body: JSON.parse('{}') }));
     }
 
     return next.handle(request);
