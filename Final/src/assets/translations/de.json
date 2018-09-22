@@ -1,0 +1,29 @@
+{
+    "demo": {
+        "frame": {
+            "title": "Mehrsprachigkeitsdemo",
+            "page1": "Seite 1",
+            "page2": "Seite 2",
+            "page3": "Seite 3",
+            "languageSelector": {
+                "german": "Deutsch",
+                "english": "Englisch"
+            },
+            "footer": "voll krasse Footer Info © bytePassion 2018"
+        },
+        "page1": {
+            "alertButton": "Lade Text aus dem Backend und zeige ihn im Alert an",
+            "alertContent1": "Ein Beispiel um es im Alert zu zeigen",
+            "alertContent2": "Noch ein Beispiel um es im Alert zu zeigen"
+        },
+        "page2": {
+            "loadButton": "Lade Werte",
+            "display": "Lass mich {{v1}} Beispiele und {{v2}} Beispiele laden um die Parametrisierung zu zeigen"
+        },
+        "page3": {
+            "loadButton": "Lade zufällige Werte aus dem Backend",
+            "firstNumberCaption": "Erste Zahl:",
+            "secondNumberCaption": "Zweite Zahl:"
+        }
+    }
+}
