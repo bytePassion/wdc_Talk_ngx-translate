@@ -135,4 +135,42 @@ switch (this.translateService.currentLang) {
 }
 
 --------> demo '.' and ',' working
+
+--------> demo unit tests not compiling
+
+19.
+const translateServiceMock = jasmine.createSpyObj('TranslateService', ['use']);
+translateServiceMock.currentLang = 'en';
+
+--------> demo unit tests compiling again but most are failing
+
+20.
+@Pipe({
+  name: 'translate'
+})
+export class TranslateMockPipe implements PipeTransform {
+  transform(value: any): any {
+    return value;
+  }
+}
+
+const translateServiceMock = jasmine.createSpyObj('TranslateService', ['instant']);
+translateServiceMock.instant.and.returnValue(testData);
+
+declarations: [ PageOneComponent, TranslateMockPipe ],
+providers: [
+  { provide: PageService, useValue: pageServiceMock },
+  { provide: TranslateService, useValue: translateServiceMock }
+]
+
+--------> demo more unit tests working
+
+21.
+.overrideTemplate(PageThreeComponent, '<div></div>')
+
+--------> demo all unit tests working
+
+
+
+
     

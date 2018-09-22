@@ -22,9 +22,9 @@ describe('PageThreeComponent', () => {
       ],
       providers: [
         { provide: PageService, useValue: pageServiceMock }
-      ],
-      schemas: [ NO_ERRORS_SCHEMA ]
+      ]
     })
+    .overrideTemplate(PageThreeComponent, '<div></div>')
     .compileComponents();
   }));
 
