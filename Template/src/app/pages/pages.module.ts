@@ -11,9 +11,6 @@ import { PageService } from './service/page.service';
   imports: [
     CommonModule
   ],
-  providers: [
-    PageService
-  ],
   declarations:
   [
     PageOneComponent,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LanguageDisplayObject } from './LanguageDisplayObject';
+import { LanguageDisplayModel } from '../../models/languaged-display-model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class FrameComponent implements OnInit {
 
-  availableLanguages: LanguageDisplayObject[];
-  selectedLanguage: LanguageDisplayObject;
+  availableLanguages: LanguageDisplayModel[];
+  selectedLanguage: LanguageDisplayModel;
 
   selectedPage: string;
 
@@ -36,7 +36,7 @@ export class FrameComponent implements OnInit {
     this.selectedLanguage = this.availableLanguages[0];
   }
 
-  onItemClick(item: LanguageDisplayObject): void {
+  onItemClick(item: LanguageDisplayModel): void {
     this.selectedLanguage = item;
   }
 

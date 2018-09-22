@@ -1,4 +1,4 @@
-export interface LanguageDisplayObject {
+export interface LanguageDisplayModel {
   displayName: string;
   languageCode: string;
 }

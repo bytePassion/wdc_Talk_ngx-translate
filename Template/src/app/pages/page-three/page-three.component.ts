@@ -24,5 +24,4 @@ export class PageThreeComponent implements OnInit {
       this.secondNumber = result.second;
     });
   }
-
 }

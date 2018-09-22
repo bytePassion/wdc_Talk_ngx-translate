@@ -5,8 +5,6 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { PageService } from '../service/page.service';
 import { PageThreeComponent } from './page-three.component';
 
-
-
 describe('PageThreeComponent', () => {
   let component: PageThreeComponent;
   let fixture: ComponentFixture<PageThreeComponent>;
