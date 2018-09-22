@@ -7,9 +7,19 @@ import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common
 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
 
-export function httpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(httpClient, './assets/translations/', '.json');
+export function httpLoaderFactory(httpClient: HttpClient): TranslateLoader {
+  return new MyTranslateHttpLoader(httpClient);
+}
+
+export class MyTranslateHttpLoader implements TranslateLoader {
+
+  constructor(private readonly httpClient: HttpClient) { }
+
+  getTranslation(lang: string): Observable<any> {
+      return this.httpClient.get('http://localhost.de/api/translation/' + lang);
+  }
 }
 
 @NgModule({

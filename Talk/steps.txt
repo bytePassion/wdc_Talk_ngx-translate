@@ -35,3 +35,37 @@ constructor(private readonly translateService: TranslateService) {
     this.translateService.setDefaultLang('en');
     this.translateService.use('en');
   }
+
+5.
+{{ 'demo.frame.footer' | translate }}
+
+--------> demo footer
+
+6.
+restliche labels im frame (html + ts) ersetzen
+
+7. 
+constructor(private readonly router: Router,
+            private readonly translateService: TranslateService) {
+}
+
+this.selectedLanguage = this.availableLanguages.find(lang => this.translateService.currentLang === lang.languageCode);
+
+this.translateService.use(item.languageCode);
+
+--------> demo switch language
+
+export function httpLoaderFactory(httpClient: HttpClient): TranslateLoader {
+  return new MyTranslateHttpLoader(httpClient);
+}
+
+export class MyTranslateHttpLoader implements TranslateLoader {
+
+  constructor(private readonly httpClient: HttpClient) { }
+
+  getTranslation(lang: string): Observable<any> {
+      return this.httpClient.get('http://localhost.de/api/translation/' + lang);
+  }
+}
+
+--------> demo still working
