@@ -72,7 +72,12 @@ export class MyTranslateHttpLoader implements TranslateLoader {
 
 --------> demo still working
 
-9. 
+9.
+<span [translate]="'demo.frame.footer'"></span>
+
+--------> demo still working
+
+10. 
 this.translateService.addLangs(['en', 'de', 'la']);
 this.translateService.setDefaultLang('la');
 
@@ -82,3 +87,16 @@ this.translateService.setDefaultLang('la');
 }
 
 --------> demo label-language
+
+11.
+const content = (this.page1Counter++ % 2 === 0) ? this.page1Alert1LabelKey : this.page1Alert2LabelKey;
+
+--------> demo labelKey in alert
+
+12.
+.subscribe((result) => alert(this.translateService.instant(result)));
+
+--------> demo still working
+
+
+

@@ -9,6 +9,8 @@ export class MockBackend implements HttpInterceptor {
 
   private page1Alert1 = 'One example to show in an alert';
   private page1Alert2 = 'Another example to show in an alert';
+  private page1Alert1LabelKey = 'demo.page1.alertContent1';
+  private page1Alert2LabelKey = 'demo.page1.alertContent2';
   private page1Counter = 0;
 
   constructor(private readonly httpClient: HttpClient) { }
@@ -17,7 +19,7 @@ export class MockBackend implements HttpInterceptor {
 
     if (request.url.endsWith('/api/pageOne') && request.method === 'GET') {
 
-      const content = (this.page1Counter++ % 2 === 0) ? this.page1Alert1 : this.page1Alert2;
+      const content = (this.page1Counter++ % 2 === 0) ? this.page1Alert1LabelKey : this.page1Alert2LabelKey;
       return of(new HttpResponse({ status: 200, body: content }));
     }
 

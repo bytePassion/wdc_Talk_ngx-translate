@@ -9,7 +9,7 @@ import { PageService } from '../service/page.service';
 })
 export class PageOneComponent implements OnInit {
 
-  constructor(private pageService: PageService) { }
+  constructor(private readonly pageService: PageService) { }
   ngOnInit() { }
 
   onClick() {

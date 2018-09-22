@@ -9,6 +9,8 @@ export class MockBackend implements HttpInterceptor {
 
   private page1Alert1 = 'One example to show in an alert';
   private page1Alert2 = 'Another example to show in an alert';
+  private page1Alert1LabelKey = 'demo.page1.alertContent1';
+  private page1Alert2LabelKey = 'demo.page1.alertContent2';
   private page1Counter = 0;
 
   constructor(private readonly httpClient: HttpClient) { }
