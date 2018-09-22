@@ -18,7 +18,7 @@ export class MyTranslateHttpLoader implements TranslateLoader {
   constructor(private readonly httpClient: HttpClient) { }
 
   getTranslation(lang: string): Observable<any> {
-      return this.httpClient.get('http://localhost.de/api/translation/' + lang);
+    return this.httpClient.get('http://localhost.de/api/translation/' + lang);
   }
 }
 

@@ -34,6 +34,10 @@ export class FrameComponent implements OnInit {
       {
         displayName: 'demo.frame.languageSelector.english',
         languageCode: 'en',
+      },
+      {
+        displayName: 'demo.frame.languageSelector.labelLang',
+        languageCode: 'la',
       }
     ];
     this.selectedLanguage = this.availableLanguages.find(lang => this.translateService.currentLang === lang.languageCode);

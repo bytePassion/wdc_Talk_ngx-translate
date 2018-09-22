@@ -32,6 +32,7 @@ TranslateModule.forChild()
 import { TranslateService } from '@ngx-translate/core';
 
 constructor(private readonly translateService: TranslateService) {
+    this.translateService.addLangs(['en', 'de']);
     this.translateService.setDefaultLang('en');
     this.translateService.use('en');
   }
@@ -55,6 +56,7 @@ this.translateService.use(item.languageCode);
 
 --------> demo switch language
 
+8.
 export function httpLoaderFactory(httpClient: HttpClient): TranslateLoader {
   return new MyTranslateHttpLoader(httpClient);
 }
@@ -69,3 +71,14 @@ export class MyTranslateHttpLoader implements TranslateLoader {
 }
 
 --------> demo still working
+
+9. 
+this.translateService.addLangs(['en', 'de', 'la']);
+this.translateService.setDefaultLang('la');
+
+{
+  displayName: 'demo.frame.languageSelector.labelLang',
+  languageCode: 'la',
+}
+
+--------> demo label-language
