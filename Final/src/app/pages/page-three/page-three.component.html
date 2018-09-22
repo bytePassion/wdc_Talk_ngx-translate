@@ -1,12 +1,12 @@
 <div class="main-page-content">
 
-  <button (click)="onClick()">Load random numbers from backend</button>
+  <button (click)="onClick()">{{ 'demo.page3.loadButton' | translate }}</button>
 
   <table>
     <tbody>
       <tr>
         <td>
-          First Number:
+          {{ 'demo.page3.firstNumberCaption' | translate }}
         </td>
         <td class="money-column text-right">
           {{firstNumber | roundingPipe}}
@@ -14,7 +14,7 @@
       </tr>
       <tr>
         <td>
-          Second Number:
+          {{ 'demo.page3.secondNumberCaption' | translate }}
         </td>
         <td class="money-column text-right">
           {{secondNumber | roundingPipe}}
