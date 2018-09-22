@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { RoundingPipe} from '../pipes/rounding.pipe';
+import { RoundingToCurrencyPipe} from '../pipes/rounding-to-currency.pipe';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { PageService } from '../service/page.service';
 import { PageThreeComponent } from './page-three.component';
@@ -20,7 +20,7 @@ describe('PageThreeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         PageThreeComponent,
-        RoundingPipe
+        RoundingToCurrencyPipe
       ],
       providers: [
         { provide: PageService, useValue: pageServiceMock }
@@ -40,7 +40,7 @@ describe('PageThreeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should get values from backend', () => {
+  it('should get values from service', () => {
 
     // Act
     component.onClick();

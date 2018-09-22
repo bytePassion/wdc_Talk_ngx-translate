@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'roundingPipe'
 })
-export class RoundingPipe implements PipeTransform {
+export class RoundingToCurrencyPipe implements PipeTransform {
 
   transform(value: number): string {
 

@@ -40,19 +40,16 @@ export class MockBackend implements HttpInterceptor {
     }
 
     if (request.url.endsWith('/api/translation/en') && request.method === 'GET') {
-
       return this.httpClient.get('assets/translations/en.json')
                  .pipe(map((res: any) => new HttpResponse({ status: 200, body: res })));
     }
 
     if (request.url.endsWith('/api/translation/de') && request.method === 'GET') {
-
       return this.httpClient.get('assets/translations/de.json')
                  .pipe(map((res: any) => new HttpResponse({ status: 200, body: res })));
     }
 
     if (request.url.endsWith('/api/translation/la') && request.method === 'GET') {
-
       return of(new HttpResponse({ status: 200, body: JSON.parse('{}') }));
     }
 

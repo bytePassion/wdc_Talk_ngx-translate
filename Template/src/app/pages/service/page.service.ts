@@ -13,7 +13,7 @@ export class PageService {
 
   public getPageOneData(): Observable<string> {
     return this.http.get('http://localhost.de/api/pageOne')
-                    .pipe(map((res) => String(res)));
+                    .pipe(map((res) => res.toString()));
   }
 
   public getPageTwoData(): Observable<Numbers> {

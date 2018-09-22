@@ -4,19 +4,15 @@
       <span class="navbar-brand not-selectable">Multi-Lingual Demo</span>
 
         <ul class="navbar-nav mr-auto d-flex flex-row">
-          
-          <li class="nav-item active mx-3"
-              [class.active]="selectedPage === 'page1'">
-            <a class="nav-link not-selectable" routerLink="page1" (click)="onPageClick('page1')">Page 1</a>
+          <li class="nav-item mx-3" [class.active]="selectedPage === 'page1'">
+            <a class="nav-link not-selectable" routerLink="page1">Page 1</a>
           </li>
-          
-          <li class="nav-item mr-3"
-              [class.active]="selectedPage === 'page2'">
-              <a class="nav-link not-selectable" routerLink="page2" (click)="onPageClick('page2')">Page 2</a>
+
+          <li class="nav-item mr-3" [class.active]="selectedPage === 'page2'">
+              <a class="nav-link not-selectable" routerLink="page2">Page 2</a>
           </li>
-          <li class="nav-item"
-              [class.active]="selectedPage === 'page3'">         
-            <a class="nav-link not-selectable" routerLink="page3" (click)="onPageClick('page3')">Page 3</a>
+          <li class="nav-item" [class.active]="selectedPage === 'page3'">
+            <a class="nav-link not-selectable" routerLink="page3">Page 3</a>
           </li>
         </ul>
 
@@ -40,7 +36,7 @@
 
   <footer class="footer">
     <div class="container">
-      <span style="color: white;">Some crazy footer info ...</span>
+      <span>Some crazy footer info ...</span>
     </div>
   </footer>
 

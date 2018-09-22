@@ -15,7 +15,6 @@ describe('PageOneComponent', () => {
 
     pageServiceMock.getPageOneData.and.returnValue(of(testData));
 
-
     TestBed.configureTestingModule({
       declarations: [ PageOneComponent ],
       providers: [{ provide: PageService, useValue: pageServiceMock }],
@@ -33,8 +32,24 @@ describe('PageOneComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should get value from backend', () => {
+  it('should get value from service', () => {
+
+    // Act
     component.onClick();
+
+    // Assert
     expect(pageServiceMock.getPageOneData).toHaveBeenCalledTimes(1);
+  });
+
+  it('should show allert with correct message', () => {
+
+    // Arrange
+    spyOn(window, 'alert');
+
+    // Act
+    component.onClick();
+
+    // Assert
+    expect(window.alert).toHaveBeenCalledWith(testData);
   });
 });

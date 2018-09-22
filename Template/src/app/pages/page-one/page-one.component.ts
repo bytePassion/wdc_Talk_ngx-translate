@@ -9,18 +9,13 @@ import { PageService } from '../service/page.service';
 })
 export class PageOneComponent implements OnInit {
 
-
   constructor(private pageService: PageService) { }
-
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
   onClick() {
     this.pageService.getPageOneData()
-      .pipe(
-        take(1)
-      ).subscribe((result) => alert(result));
+      .pipe(take(1))
+      .subscribe((result) => alert(result));
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LanguageDisplayObject } from './LanguageDisplayObject';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-frame',
@@ -11,11 +12,17 @@ export class FrameComponent implements OnInit {
   availableLanguages: LanguageDisplayObject[];
   selectedLanguage: LanguageDisplayObject;
 
-  selectedPage: string = 'page1';
+  selectedPage: string;
 
-  constructor() { }
+  constructor(private readonly router: Router) { }
 
   ngOnInit() {
+
+    this.router.events.subscribe(_ => {
+      const url = this.router.url;
+      this.selectedPage = url.substr(url.length - 5, 5);
+    });
+
     this.availableLanguages = [
       {
         displayName: 'Deutsch',
@@ -27,10 +34,6 @@ export class FrameComponent implements OnInit {
       }
     ];
     this.selectedLanguage = this.availableLanguages[0];
-  }
-
-  onPageClick(page: string): void {
-    this.selectedPage = page;
   }
 
   onItemClick(item: LanguageDisplayObject): void {

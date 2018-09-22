@@ -21,10 +21,11 @@ export class PageTwoComponent implements OnInit {
   }
 
   onClick(): void {
-    this.pageService.getPageTwoData().subscribe((result: Numbers) => {
+    this.pageService.getPageTwoData()
+                    .pipe(take(1))
+                    .subscribe((result: Numbers) => {
       this.value1 = result.first.toString();
       this.value2 = result.second.toString();
     });
   }
-
 }
