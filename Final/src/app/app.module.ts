@@ -40,6 +40,7 @@ export class MyTranslateHttpLoader implements TranslateLoader {
    ],
    providers: [
        { provide: HTTP_INTERCEPTORS, useClass: MockBackend, multi: true },
+       { provide: 'windowObject', useValue: window }
    ],
    bootstrap: [
       AppComponent

@@ -170,6 +170,20 @@ providers: [
 
 --------> demo all unit tests working
 
+22.
+{ provide: "windowObject", useValue: window }
+
+23.
+@Inject('windowObject') private readonly window: Window
+
+// this.translateService.use('en');
+
+const language = this.window.navigator.language;
+const languageCode = language.split('-')[0];
+this.translateService.use(languageCode);
+
+---------> demo switching languages
+
 
 
 
