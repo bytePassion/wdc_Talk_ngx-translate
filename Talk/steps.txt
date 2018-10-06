@@ -1,8 +1,11 @@
-1. 
+---------> demo application
+---------> demo unit tests
+
+1. powershell
 npm install @ngx-translate/core --save
 npm install @ngx-translate/http-loader --save
 
-2. 
+2. app.module.ts
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
@@ -24,11 +27,11 @@ Note:
 If you use a SharedModule that you import in multiple other feature modules, 
 you can export the TranslateModule to make sure you don't have to import it in every module.
 
-3.
+3. home.module.ts
 import { TranslateModule } from '@ngx-translate/core';
 TranslateModule.forChild()
 
-4.
+4. app.component.ts
 import { TranslateService } from '@ngx-translate/core';
 
 constructor(private readonly translateService: TranslateService) {
@@ -37,15 +40,15 @@ constructor(private readonly translateService: TranslateService) {
     this.translateService.use('en');
   }
 
-5.
+5. frame.component.html
 {{ 'demo.frame.footer' | translate }}
 
 --------> demo footer
 
-6.
+6. frame.component.html
 restliche labels im frame (html + ts) ersetzen
 
-7. 
+7. frame.component.ts
 constructor(private readonly router: Router,
             private readonly translateService: TranslateService) {
 }
@@ -56,7 +59,7 @@ this.translateService.use(item.languageCode);
 
 --------> demo switch language
 
-8.
+8. app.module.ts
 export function httpLoaderFactory(httpClient: HttpClient): TranslateLoader {
   return new MyTranslateHttpLoader(httpClient);
 }
@@ -72,12 +75,12 @@ export class MyTranslateHttpLoader implements TranslateLoader {
 
 --------> demo still working
 
-9.
+9. frame.component.html
 <span [translate]="'demo.frame.footer'"></span>
 
 --------> demo still working
 
-10. 
+10. frame.component.ts
 this.translateService.addLangs(['en', 'de', 'la']);
 this.translateService.setDefaultLang('la');
 
@@ -88,41 +91,41 @@ this.translateService.setDefaultLang('la');
 
 --------> demo label-language
 
-11.
+11. mock-backend.interceptor.ts
 const content = (this.page1Counter++ % 2 === 0) ? this.page1Alert1LabelKey : this.page1Alert2LabelKey;
 
 --------> demo labelKey in alert
 
-12.
+12. pages.module.ts
 TranslateModule.forChild()
 
-13.
+13. page-one.component.html
 <button (click)="onClick()">{{ 'demo.page1.alertButton' | translate }}</button>
 
-14.
+14. page-one.component.ts
 .subscribe((result) => alert(this.translateService.instant(result)));
 
 --------> demo working again
 
-15.
+15. page-two.component.html
 <button (click)="onClick()">{{ 'demo.page2.loadButton' | translate }}</button>
 <div>{{ 'demo.page2.display' | translate }}</div>
 
 --------> demo not working interpolation
 
-16.
+16. page-two.component.html
 <div>{{ 'demo.page2.display' | translate:{'v1': value1, 'v2': value2} }}</div>
 
 --------> demo working again
 
-17.
+17. page-three.component.html
 <button (click)="onClick()">{{ 'demo.page3.loadButton' | translate }}</button>
 {{ 'demo.page3.firstNumberCaption' | translate }}
 {{ 'demo.page3.secondNumberCaption' | translate }}
 
 --------> demo '.' and ',' missing
 
-18.
+18. rounding-to-currency.pipe.ts
 pure: false
 
 constructor(private readonly translateService: TranslateService) {}
@@ -138,13 +141,13 @@ switch (this.translateService.currentLang) {
 
 --------> demo unit tests not compiling
 
-19.
+19. rounding-to-currency.pipe.spec.ts
 const translateServiceMock = jasmine.createSpyObj('TranslateService', ['use']);
 translateServiceMock.currentLang = 'en';
 
 --------> demo unit tests compiling again but most are failing
 
-20.
+20. page-one.component.spec.ts
 @Pipe({
   name: 'translate'
 })
@@ -165,15 +168,15 @@ providers: [
 
 --------> demo more unit tests working
 
-21.
+21. page-three.component.spec.ts
 .overrideTemplate(PageThreeComponent, '<div></div>')
 
 --------> demo all unit tests working
 
-22.
+22. app.module.ts
 { provide: "windowObject", useValue: window }
 
-23.
+23. app.component.ts
 @Inject('windowObject') private readonly window: Window
 
 // this.translateService.use('en');
@@ -183,8 +186,3 @@ const languageCode = language.split('-')[0];
 this.translateService.use(languageCode);
 
 ---------> demo switching languages
-
-
-
-
-    

@@ -1,19 +1,16 @@
 Lokalisierung in Angular (mit ngx-translate)
 
-1. What is ngx-translate?
-2. Vorstellen der Beispielanwendung
-3. Struktur des Sprachtabellen
-
-mulit-language im frontend
-einbindung des ngx-translate-pakets
-sprachumschaltung (-> aktuelle sprache auslesen, etc)
-übersetzung mit pipe
-übersetzung mit direktive
-übersetzung mit parameter
-übersetzung mit service
-eigene pipes die auf sprachumstellung reagieren
-labelsprache
-unit-testing einer komponente mit übersetzungen
-(beim start der applikation default sprache des browsers einstellen)
-
-sprach-tabellen aus dem backend
+1. Vorstellung des Demo-Projekts
+2. Format der Sprachdatei
+3. Installierung von ngx-translate
+4. Vorbereitungen zur Verwendung
+5. Übersetzungen mit Pipe 
+6. Sprachumschaltung
+7. Sprachdatei aus dem Backend laden
+8. Übersetzung mit Direktive
+9. Labels anzeigen
+10. Übersetzung im TypeScript
+11. Übersetzung mit parameter
+12. In der Pipe auf Übersetzung reagieren
+13. Unit-testing
+14. Sprache aus dem Browser auslesen
