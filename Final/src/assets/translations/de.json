@@ -9,8 +9,7 @@
         "german": "Deutsch",
         "english": "Englisch",
         "labelLang": "Label-Sprache"
-      },
-      "footer": "voll krasse Footer Info © bytePassion 2018"
+      }
     },
     "page1": {
       "alertButton": "Lade Text aus dem Backend und zeige ihn im Alert an",

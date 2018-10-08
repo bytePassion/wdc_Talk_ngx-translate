@@ -9,8 +9,7 @@
         "german": "German",
         "english": "English",
         "labelLang": "LabelLang"
-      },
-      "footer": "some crazy footer info © bytePassion 2018"
+      }
     },
     "page1": {
       "alertButton": "Get text from backend and show alert",

@@ -3,13 +3,26 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PageOneComponent } from './page-one.component';
 import {of} from 'rxjs';
 import {PageService} from '../service/page.service';
+import { PipeTransform, Pipe } from '@angular/core';
+
+// @Pipe({name: 'translate'})
+// class TranslateMockPipe implements PipeTransform {
+//     transform(value) {
+//         return value;
+//     }
+
+// }
 
 describe('PageOneComponent', () => {
   let component: PageOneComponent;
   let fixture: ComponentFixture<PageOneComponent>;
 
-  const pageServiceMock: jasmine.SpyObj<PageService> = jasmine.createSpyObj('PageService', ['getPageOneData']);
   const testData = 'test';
+
+  // const translateServiceMock = jasmine.createSpyObj('TranslateService', ['instant']);
+  // translateServiceMock.instant.and.returnValue(testData);
+
+  const pageServiceMock: jasmine.SpyObj<PageService> = jasmine.createSpyObj('PageService', ['getPageOneData']);
 
   beforeEach(async(() => {
 
