@@ -11,13 +11,8 @@ export class RoundingToCurrencyPipe implements PipeTransform {
   }
 
   transform(value: number): string {
-    const rounded = value.toFixed(2);
-    const parts = rounded.split('.');
-
-    switch (this.translateService.currentLang) {
-      case 'de': return `${parts[0]},${parts[1]}€`;
-      case 'en': return `${parts[0]}.${parts[1]}€`;
-    }
-    return rounded + '€';
+    const translated = value.toLocaleString(this.translateService.currentLang,
+        { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return translated + '€';
   }
 }

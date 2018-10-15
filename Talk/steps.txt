@@ -13,7 +13,7 @@ npm install @ngx-translate/http-loader --save
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
-export function httpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
+function httpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(httpClient, './assets/translations/', '.json');
 }
 
@@ -52,7 +52,7 @@ you can export the TranslateModule to make sure you don't have to import it in e
 {{ 'demo.frame.title' | translate }}
 
 6. frame.component.html
-<span [translate]="'demo.frame.footer'"></span>
+<div [translate]="'demo.frame.title'"></div>
 
 --------> demo still working
 
@@ -163,15 +163,10 @@ TranslateModule.forChild()
 18. rounding-to-currency.pipe.ts
 pure: false
 
-constructor(private readonly translateService: TranslateService) {}
-
-const parts = rounded.split('.');
-
-switch (this.translateService.currentLang) {
-  case 'de': return `${parts[0]},${parts[1]}€`;
-  case 'en': return `${parts[0]}.${parts[1]}€`;
-}
-
+const translated = value.toLocaleString(this.translateService.currentLang,
+        { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return translated + '€';
+    
 --------> demo '.' and ',' working
 
 
